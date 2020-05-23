@@ -1,2 +1,392 @@
 // Load CSS Reset from NPM
-@import "~normalize.css"
+@import "~normalize.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container {
+  max-width: 2600px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+
+  @media screen and (max-width: 1050px) {
+    min-height: -webkit-fill-available;
+    flex-wrap: wrap-reverse;
+  }
+
+  > div {
+    width: 50%;
+
+    @media screen and (max-width: 1050px) {
+      width: 100%;
+    }
+  }
+}
+
+.left {
+  background: #292723;
+  border-right: 3px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    bottom: 0;
+    width: 90% !important;
+    transform: translateX(-50%);
+    left: 50%;
+    height: 40vw;
+    z-index: 20;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 500px) {
+    height: 35vw;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+    max-width: 500px;
+
+    @media screen and (max-width: 1050px) {
+      transform: translateX(-50%) translateY(-50%);
+      width: 90%;
+      max-width: none;
+    }
+
+    @media screen and (max-width: 767px) {
+      position: relative;
+      transform: none;
+      margin: 0 auto;
+      top: -4vw;
+      left: 0;
+    }
+
+    @media screen and (max-width: 500px) {
+      top: -7vw;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+
+      @media screen and (max-width: 1050px) {
+        max-width: 300px;
+      }
+
+      @media screen and (max-width: 767px) {
+        max-width: 30vw;
+        margin-top: 5vw;
+      }
+
+      @media screen and (max-width: 500px) {
+        margin-top: 10vw;
+      }
+    }
+
+    .info {
+      text-align: center;
+
+      a {
+        display: inline-block;
+        padding: 20px 30px;
+        background: black;
+        color: white;
+        margin: 20px auto;
+        transition: all 0.3s ease;
+        border: 1px solid white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 16px;
+
+        @media screen and (max-width: 1400px) {
+          font-size: 1.1vw;
+          letter-spacing: 0.05vw;
+        }
+
+        @media screen and (max-width: 1050px) {
+          padding: 2.5vw 4vw;
+          font-size: 3vw;
+          letter-spacing: 0.05vw;
+          margin: 3vw auto;
+        }
+
+        @media screen and (max-width: 767px) {
+          padding: 3vw 4.5vw;
+          font-size: 3vw;
+          letter-spacing: 0.05vw;
+          margin-top: 3vw;
+          margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 500px) {
+          font-size: 4vw;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+          border-color: black;
+        }
+      }
+    }
+  }
+}
+
+.right {
+  overflow: hidden;
+
+  @media screen and (max-width: 1050px) {
+    width: 100%;
+  }
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  background: url('../images/background.jpg') right top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  animation: blur-glitch 5s infinite alternate, glow-scale 40s infinite alternate, background-slide 100s infinite;
+
+  @media screen and (max-width: 1050px) {
+    padding: 25vw 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 20vw 0;
+  }
+
+  &::before {
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(255, 50, 50, 0.3) 0%, rgba(255, 50, 50, 0.3) 100%), url('../images/background.jpg') right top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 5;
+    mix-blend-mode: screen;
+    transform: translateX(15px) scale(1.1);
+    opacity: 0.5;
+    animation: red-glitch 6s infinite alternate;
+    animation-delay: 3s;
+  }
+
+  &::after {
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: '';
+    background: linear-gradient(to bottom, rgba(50, 200, 255, 0.3) 0%, rgba(50, 200, 255, 0.3) 100%), url('../images/background.jpg') right top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+    transform: translateX(-15px) scale(1.1);
+    z-index: 10;
+    opacity: 0.5;
+    animation: blue-glitch 9s infinite alternate;
+    animation-delay: 5s;
+  }
+}
+
+@keyframes blur-glitch {
+  0% {
+    filter: blur(0);
+  }
+
+  19% {
+    filter: blur(0);
+  }
+
+  20% {
+    filter: blur(1px);
+  }
+
+  30% {
+    filter: blur(5px);
+  }
+
+  39% {
+    filter: blur(2px);
+  }
+
+  40% {
+    filter: blur(0);
+  }
+
+  69% {
+    filter: blur(1px);
+  }
+
+  80% {
+    filter: blur(2px);
+  }
+
+  89% {
+    filter: blur(1px);
+  }
+
+  90% {
+    filter: blur(0);
+  }
+
+  100% {
+    filter: blur(0);
+  }
+}
+
+@keyframes glow-scale {
+  0% {
+    transform: scale(1.2);
+  }
+
+  35% {
+    transform: scale(1.3);
+  }
+
+  69% {
+    transform: scale(1.3);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes background-slide {
+  0% {
+    background-position: right top;
+  }
+
+  50% {
+    background-position: center top;
+  }
+
+  100% {
+    background-position: right top;
+  }
+}
+
+@keyframes red-glitch {
+  0% {
+    opacity: 0;
+  }
+
+  22% {
+    opacity: 0;
+  }
+
+  23% {
+    opacity: 1;
+  }
+
+  34% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0;
+  }
+
+  86% {
+    opacity: 0;
+  }
+
+  87% {
+    opacity: 1;
+  }
+
+  93% {
+    opacity: 1;
+  }
+
+  94% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blue-glitch {
+  0% {
+    opacity: 0;
+  }
+
+  29% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  64% {
+    opacity: 0;
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  91% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  96% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

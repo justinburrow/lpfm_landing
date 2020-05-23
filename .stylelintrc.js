@@ -6,4 +6,7 @@ module.exports = {
     "scss/at-rule-no-unknown": true,
     "no-descending-specificity": null
   },
+  "options": {
+    fix: true
+  }
 }
