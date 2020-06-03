@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: http://www.lbfm.com/sitemap.xml
+Host: www.lbfm.com
