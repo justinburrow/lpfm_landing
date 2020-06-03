@@ -34,7 +34,7 @@ body {
   border-right: 3px solid rgba(255, 255, 255, 0.2);
   position: relative;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1024px) {
     position: absolute;
     bottom: 0;
     width: 90% !important;
@@ -49,7 +49,7 @@ body {
   }
 
   @media screen and (max-width: 500px) {
-    height: 35vw;
+    height: 50vw;
   }
 
   .content {
@@ -65,7 +65,7 @@ body {
       max-width: none;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1024px) {
       position: relative;
       transform: none;
       margin: 0 auto;
@@ -87,7 +87,7 @@ body {
         max-width: 300px;
       }
 
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: 1024px) {
         max-width: 30vw;
         margin-top: 5vw;
       }
@@ -126,7 +126,7 @@ body {
           margin: 3vw auto;
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 1024px) {
           padding: 3vw 4.5vw;
           font-size: 3vw;
           letter-spacing: 0.05vw;
@@ -141,6 +141,33 @@ body {
         &:hover {
           background: rgba(255, 255, 255, 0.3);
           border-color: black;
+        }
+      }
+    }
+  }
+
+  .social {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    div {
+      a {
+        padding: 10px;
+        display: block;
+
+        @media screen and (max-width: 1024px) {
+          padding: 5vw;
+        }
+
+        img {
+          width: 100%;
+          max-width: 30px;
+          filter: invert(1);
+          margin-top: 0;
+
+          @media screen and (max-width: 1024px) {
+            max-width: 5vw;
+          }
         }
       }
     }
@@ -170,7 +197,7 @@ body {
     padding: 25vw 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     padding: 20vw 0;
   }
 
