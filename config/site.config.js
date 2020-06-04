@@ -15,7 +15,7 @@ const config = {
   site_description: 'LPFM Landing Page',
 
   // Your website's URL, used for sitemap
-  site_url: 'http://www.lpfm.com',
+  site_url: 'http://www.lpfmband.com',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
