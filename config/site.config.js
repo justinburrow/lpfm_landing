@@ -15,7 +15,7 @@ const config = {
   site_description: 'LPFM Landing Page',
 
   // Your website's URL, used for sitemap
-  site_url: 'http://www.lbfm.com',
+  site_url: 'http://www.lpfm.com',
 
   // Google Analytics tracking ID (leave blank to disable)
   googleAnalyticsUA: '',
@@ -24,7 +24,7 @@ const config = {
   viewport: 'width=device-width,initial-scale=1',
 
   // Source file for favicon generation. 512x512px recommended.
-  favicon: path.join(ROOT, '/src/images/favicon.png'),
+  favicon: path.join(ROOT, '/src/favicon.png'),
 
   // Local development URL
   dev_host: 'localhost',
