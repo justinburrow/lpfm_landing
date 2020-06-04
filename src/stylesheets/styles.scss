@@ -1,11 +1,18 @@
 // Load CSS Reset from NPM
 @import "~normalize.css";
 
-html,
+html {
+  margin: 0;
+  padding: 0;
+  height: -webkit-fill-available;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .container {
@@ -14,9 +21,9 @@ body {
   display: flex;
   width: 100%;
   min-height: 100vh;
+  min-height: -webkit-fill-available;
 
   @media screen and (max-width: 1050px) {
-    min-height: -webkit-fill-available;
     flex-wrap: wrap-reverse;
   }
 
