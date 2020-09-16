@@ -14,6 +14,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+  height: 100%;
 }
 
 .container {
@@ -65,7 +66,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-70%);
+    transform: translateX(-50%) translateY(-50%);
     max-width: 500px;
 
     @media screen and (max-width: 1050px) {
@@ -78,27 +79,31 @@ body {
       position: relative;
       transform: none;
       margin: 0 auto;
-      top: -4vw;
+      top: 2.5vw;
       left: 0;
     }
 
+    @media screen and (max-width: 768px) {
+      top: 6vw;
+    }
+
     @media screen and (max-width: 500px) {
-      top: -7vw;
+      top: 0;
     }
 
     img {
       width: 100%;
       max-width: 100%;
       display: block;
-      margin: 0 auto;
+      margin: 0 auto 30px auto;
 
       @media screen and (max-width: 1050px) {
-        max-width: 300px;
+        max-width: 150px;
+        margin-bottom: 0;
       }
 
       @media screen and (max-width: 1024px) {
-        max-width: 30vw;
-        margin-top: 5vw;
+        max-width: 15vw;
       }
 
       @media screen and (max-width: 500px) {
@@ -114,7 +119,7 @@ body {
         padding: 20px 30px;
         background: black;
         color: white;
-        margin: 20px auto;
+        margin: 30px auto;
         transition: all 0.3s ease;
         border: 1px solid white;
         text-decoration: none;
@@ -129,15 +134,15 @@ body {
         }
 
         @media screen and (max-width: 1050px) {
-          padding: 2.5vw 4vw;
-          font-size: 3vw;
+          padding: 1.5vw 2vw;
+          font-size: 1.5vw;
           letter-spacing: 0.05vw;
           margin: 3vw auto;
         }
 
         @media screen and (max-width: 1024px) {
-          padding: 3vw 4.5vw;
-          font-size: 3vw;
+          padding: 1vw 2.5vw;
+          font-size: 2.5vw;
           letter-spacing: 0.05vw;
           margin-top: 3vw;
           margin-bottom: 0;
@@ -157,15 +162,16 @@ body {
 
   .social {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
     div {
       a {
         padding: 10px;
         display: block;
+        margin: 0;
 
         @media screen and (max-width: 1024px) {
-          padding: 5vw;
+          padding: 2vw;
         }
 
         img {
@@ -173,9 +179,41 @@ body {
           max-width: 30px;
           filter: invert(1);
           margin-top: 0;
+          margin-bottom: 0;
 
           @media screen and (max-width: 1024px) {
+            max-width: 3vw;
+            padding: 3vw;
+          }
+
+          @media screen and (max-width: 850px) {
             max-width: 5vw;
+          }
+        }
+      }
+
+      &:first-child {
+        a {
+          position: relative;
+
+          img {
+            max-width: 4vw;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-20%);
+
+            @media screen and (max-width: 1350px) {
+              transform: translateY(-10%);
+            }
+
+            @media screen and (max-width: 1024px) {
+              max-width: 8vw;
+              padding: 3vw;
+            }
+
+            @media screen and (max-width: 850px) {
+              max-width: 10vw;
+            }
           }
         }
       }
@@ -203,7 +241,7 @@ body {
   animation: blur-glitch 5s infinite alternate, glow-scale 40s infinite alternate, background-slide 100s infinite;
 
   @media screen and (max-width: 1050px) {
-    padding: 25vw 0;
+    padding: 15vw 0;
   }
 
   @media screen and (max-width: 1024px) {
