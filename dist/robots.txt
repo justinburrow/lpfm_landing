@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: http://www.lpfmband.com/sitemap.xml
+Host: www.lpfmband.com
